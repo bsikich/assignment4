@@ -53,18 +53,18 @@
         $("#loadTable").click(function(){
           $.get("/restserver/api/example/customusers", function(data)
                 {
-                  var content = '';
+                  var addToTable = '';
 
                   for(var i = 0; i < data.length; i++) {
-                    content += '<tr>';
-                    content += '<td>'+data[i].id+'</td>';
-                    content += '<td>'+data[i].email+'</td>';
-                    content += '<td>'+data[i].fname+'</td>';
-                    content += '<td>'+data[i].lname+'</td>';
-                    content += '<td>'+data[i].zip+'</td>';
-                    content += '</tr>';
+                    addToTable += '<tr>';
+                    addToTable += '<td>'+data[i].id+'</td>';
+                    addToTable += '<td>'+data[i].email+'</td>';
+                    addToTable += '<td>'+data[i].fname+'</td>';
+                    addToTable += '<td>'+data[i].lname+'</td>';
+                    addToTable += '<td>'+data[i].zip+'</td>';
+                    addToTable += '</tr>';
 
-                              $('#myTable').html(content);
+                              $('#myTable').html(addToTable);
                 }
         });
       });
