@@ -56,10 +56,9 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $("#loadTable").click(function(){
+          var addToTable = '';
           $.get("/restserver/api/example/customusers", function(data)
                 {
-                  var addToTable = '';
-
                   for(var i = 0; i < data.length; i++) {
                     addToTable += '<tr>';
                     addToTable += '<td>'+data[i].id+'</td>';
@@ -68,9 +67,8 @@
                     addToTable += '<td>'+data[i].lname+'</td>';
                     addToTable += '<td>'+data[i].zip+'</td>';
                     addToTable += '</tr>';
-
-                              $('#myTable').append(addToTable);
                 }
+                $('#myTable').append(addToTable);
         });
       });
     });
